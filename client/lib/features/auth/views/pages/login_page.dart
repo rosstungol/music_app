@@ -54,8 +54,8 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 20),
               AuthGradientButton(
                 buttonText: 'Sign In',
-                onTap: () {
-                  AuthRemoteRepository().login(
+                onTap: () async {
+                  await AuthRemoteRepository().login(
                     email: emailController.text,
                     password: passwordController.text,
                   );
