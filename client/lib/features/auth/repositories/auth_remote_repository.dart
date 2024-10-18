@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../core/constants/server_constant.dart';
 import '../../../core/failure/failure.dart';
 import '../models/user_model.dart';
 
@@ -15,8 +16,7 @@ class AuthRemoteRepository {
     try {
       final response = await http.post(
         Uri.parse(
-          // 10.0.2.2 is an AVD alias to localhost
-          "http://10.0.2.2:8000/auth/signup",
+          "${ServerConstant.serverURL}/auth/signup",
         ),
         headers: {
           'Content-type': 'application/json',
@@ -48,7 +48,9 @@ class AuthRemoteRepository {
   }) async {
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:8000/auth/login"),
+        Uri.parse(
+          "${ServerConstant.serverURL}/auth/login",
+        ),
         headers: {
           'Content-type': 'application/json',
         },
