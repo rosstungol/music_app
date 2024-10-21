@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_pallete.dart';
+import '../../../../core/utils.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../view_models/auth_viewmodel.dart';
 import '../widgets/auth_gradient_button.dart';
@@ -38,32 +39,23 @@ class _SignupPageState extends ConsumerState<SignupPage> {
       authViewModelProvider,
       (_, next) {
         next?.when(
-            data: (data) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  const SnackBar(
-                    content:
-                        Text('Account created successfully! Please log in.'),
-                  ),
-                );
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
-                ),
-              );
-            },
-            error: (error, st) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text(error.toString()),
-                  ),
-                );
-            },
-            loading: () {});
+          data: (data) {
+            showSnackBar(
+              context,
+              'Account created successfully! Please log in.',
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const LoginPage(),
+              ),
+            );
+          },
+          error: (error, st) {
+            showSnackBar(context, error.toString());
+          },
+          loading: () {},
+        );
       },
     );
 
