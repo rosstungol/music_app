@@ -6,6 +6,7 @@ from pydantic_schemas.user_create import UserCreate
 from pydantic_schemas.user_login import UserLogin
 import uuid
 import bcrypt
+import jwt
 
 router = APIRouter()
 
@@ -42,4 +43,8 @@ def login_user(user: UserLogin, db: Session=Depends(get_db)):
   if not is_match:
     raise HTTPException(400, 'You have entered an invalid email address or password')
 
-  return user_db
+  # password_key is for testing only
+  # it should be secret and stored in a .env file for production 
+  token = jwt.encode({'id': user_db.id}, 'password_key')
+
+  return {'token': token, 'user': user_db}
