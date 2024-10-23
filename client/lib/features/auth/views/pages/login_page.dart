@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_pallete.dart';
 import '../../../../core/utils.dart';
 import '../../../../core/widgets/loader.dart';
+import '../../../home/views/pages/home_page.dart';
 import '../../view_models/auth_viewmodel.dart';
 import '../widgets/auth_gradient_button.dart';
 import '../widgets/custom_field.dart';
@@ -39,13 +40,13 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       (_, next) {
         next?.when(
           data: (data) {
-            // Navigate to Home page
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => const LoginPage(),
-            //   ),
-            // );
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomePage(),
+              ),
+              (_) => false,
+            );
           },
           error: (error, st) {
             showSnackBar(context, error.toString());
