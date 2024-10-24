@@ -3,11 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_pallete.dart';
 import '../../../../core/utils.dart';
+import '../../../../core/widgets/custom_field.dart';
 import '../../../../core/widgets/loader.dart';
 import '../../../home/views/pages/home_page.dart';
 import '../../view_models/auth_viewmodel.dart';
 import '../widgets/auth_gradient_button.dart';
-import '../widgets/custom_field.dart';
 import 'signup_page.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
