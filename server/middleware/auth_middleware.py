@@ -1,5 +1,9 @@
 from fastapi import Header, HTTPException
+from dotenv import load_dotenv
 import jwt
+import os
+
+load_dotenv()
 
 def auth_middleware(x_auth_token=Header()):
   try:
@@ -8,7 +12,7 @@ def auth_middleware(x_auth_token=Header()):
       raise HTTPException(401, 'No auth token, access denied')
     
     # decode the token
-    verified_token = jwt.decode(x_auth_token, 'password_key', ['HS256'])
+    verified_token = jwt.decode(x_auth_token, os.getenv('JWT_PASSWORD_KEY'), ['HS256'])
 
     if not verified_token:
       raise HTTPException(401, 'Token verification failed, authorization denied')
