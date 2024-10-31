@@ -1,7 +1,8 @@
 import 'package:audio_waveforms/audio_waveforms.dart';
-import 'package:client/core/theme/app_pallete.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/theme/app_pallete.dart';
 
 class AudioWave extends StatefulWidget {
   final String path;

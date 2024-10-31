@@ -26,7 +26,7 @@ class CustomField extends StatelessWidget {
       ),
       validator: (val) {
         if (val!.trim().isEmpty) {
-          return "$hintText cannot be empty";
+          return '$hintText cannot be empty';
         }
         return null;
       },

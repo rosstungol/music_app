@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:client/features/home/views/widgets/audio_wave.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_pallete.dart';
 import '../../../../core/utils.dart';
 import '../../../../core/widgets/custom_field.dart';
+import '../repositories/home_repository.dart';
+import '../widgets/audio_wave.dart';
 
 class UploadSongPage extends ConsumerStatefulWidget {
   const UploadSongPage({super.key});
@@ -64,7 +65,12 @@ class _UploadSongPageState extends ConsumerState<UploadSongPage> {
         title: const Text('Upload Song'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () async {
+              await HomeRepository().uploadSong(
+                selectedImage!,
+                selectedAudio!,
+              );
+            },
             icon: const Icon(
               Icons.check,
             ),
