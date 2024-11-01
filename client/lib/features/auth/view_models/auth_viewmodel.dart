@@ -1,3 +1,5 @@
+import 'dart:developer' as developer;
+
 import 'package:fpdart/fpdart.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -45,7 +47,7 @@ class AuthViewModel extends _$AuthViewModel {
         ),
       Right(value: final r) => state = AsyncValue.data(r),
     };
-    print(val);
+    developer.log('Fetched async value: $val', name: 'SignupLogger');
   }
 
   Future<void> logInUser({
@@ -65,7 +67,7 @@ class AuthViewModel extends _$AuthViewModel {
         ),
       Right(value: final r) => _loginSuccess(r),
     };
-    print(val);
+    developer.log('Fetched async value: $val', name: 'LoginLogger');
   }
 
   AsyncValue<UserModel>? _loginSuccess(UserModel user) {
