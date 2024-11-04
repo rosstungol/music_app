@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/theme/app_pallete.dart';
+import '../../../../core/theme/app_palette.dart';
 import '../../../../core/utils.dart';
 import '../../../../core/widgets/custom_field.dart';
 import '../../../../core/widgets/loader.dart';
@@ -117,7 +117,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                             TextSpan(
                               text: 'Sign up',
                               style: TextStyle(
-                                color: Pallete.gradient2,
+                                color: Palette.gradient2,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

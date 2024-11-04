@@ -2,7 +2,7 @@ import 'package:audio_waveforms/audio_waveforms.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_pallete.dart';
+import '../../../../core/theme/app_palette.dart';
 
 class AudioWave extends StatefulWidget {
   final String path;
@@ -57,8 +57,8 @@ class _AudioWaveState extends State<AudioWave> {
           size: const Size(double.infinity, 100),
           playerController: playerController,
           playerWaveStyle: const PlayerWaveStyle(
-            fixedWaveColor: Pallete.borderColor,
-            liveWaveColor: Pallete.gradient2,
+            fixedWaveColor: Palette.borderColor,
+            liveWaveColor: Palette.gradient2,
             spacing: 6,
             showSeekLine: false,
           ),

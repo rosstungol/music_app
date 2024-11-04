@@ -5,7 +5,7 @@ import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../core/theme/app_pallete.dart';
+import '../../../../core/theme/app_palette.dart';
 import '../../../../core/utils.dart';
 import '../../../../core/widgets/custom_field.dart';
 import '../repositories/home_repository.dart';
@@ -21,7 +21,7 @@ class UploadSongPage extends ConsumerStatefulWidget {
 class _UploadSongPageState extends ConsumerState<UploadSongPage> {
   final artistController = TextEditingController();
   final songNameController = TextEditingController();
-  Color selectedColor = Pallete.cardColor;
+  Color selectedColor = Palette.cardColor;
   File? selectedImage;
   File? selectedAudio;
 
@@ -97,7 +97,7 @@ class _UploadSongPageState extends ConsumerState<UploadSongPage> {
                         ),
                       )
                     : DottedBorder(
-                        color: Pallete.borderColor,
+                        color: Palette.borderColor,
                         radius: const Radius.circular(10),
                         borderType: BorderType.RRect,
                         dashPattern: const [10, 4],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_pallete.dart';
+import '../../../../core/theme/app_palette.dart';
 
 class AuthGradientButton extends StatelessWidget {
   final String buttonText;
@@ -17,8 +17,8 @@ class AuthGradientButton extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           colors: [
-            Pallete.gradient1,
-            Pallete.gradient2,
+            Palette.gradient1,
+            Palette.gradient2,
           ],
           begin: Alignment.bottomLeft,
           end: Alignment.bottomRight,
@@ -29,8 +29,8 @@ class AuthGradientButton extends StatelessWidget {
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
           fixedSize: const Size(395, 55),
-          backgroundColor: Pallete.transparentColor,
-          shadowColor: Pallete.transparentColor,
+          backgroundColor: Palette.transparentColor,
+          shadowColor: Palette.transparentColor,
         ),
         child: Text(
           buttonText,
