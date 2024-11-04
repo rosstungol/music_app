@@ -47,7 +47,10 @@ class AuthViewModel extends _$AuthViewModel {
         ),
       Right(value: final r) => state = AsyncValue.data(r),
     };
-    developer.log('Fetched async value: $val', name: 'SignupLogger');
+    developer.log(
+      'Fetched user: $val',
+      name: 'SignupLogger',
+    );
   }
 
   Future<void> logInUser({
@@ -67,7 +70,10 @@ class AuthViewModel extends _$AuthViewModel {
         ),
       Right(value: final r) => _loginSuccess(r),
     };
-    developer.log('Fetched async value: $val', name: 'LoginLogger');
+    developer.log(
+      'Fetched user: $val',
+      name: 'LoginLogger',
+    );
   }
 
   AsyncValue<UserModel>? _loginSuccess(UserModel user) {
