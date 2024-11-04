@@ -5,7 +5,7 @@ import 'core/providers/current_user_notifier.dart';
 import 'core/theme/theme.dart';
 import 'features/auth/view_models/auth_viewmodel.dart';
 import 'features/auth/views/pages/signup_page.dart';
-import 'features/home/views/pages/upload_song_page.dart';
+import 'features/home/views/pages/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +31,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Music App',
       theme: AppTheme.darkThemeMode,
-      home: currentUser == null ? const SignupPage() : const UploadSongPage(),
+      home: currentUser == null ? const SignupPage() : const HomePage(),
     );
   }
 }
